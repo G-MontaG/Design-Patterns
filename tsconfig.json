@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "declaration": false
+  },
+  "exclude": [
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false
+}

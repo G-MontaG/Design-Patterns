@@ -1,0 +1,57 @@
+### Linux template
+*~
+.directory
+.Trash-*
+### Windows template
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+### OSX template
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+### Sass template
+.sass-cache/
+### Node template
+logs
+*.log
+npm-debug.log*
+.grunt
+node_modules
+### SublimeText template
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+sftp-config.json
+### JetBrains template
+.idea/
+atlassian-ide-plugin.xml
+
+### Project
+.env
+public
+typings
+
+**/*.js
+**/*.js.map
+**/*.d.ts
