@@ -34,11 +34,11 @@ module FactoryMethodModule {
 
 //*********************************************
 (function run() {
-  let creator1 = new FactoryMethodModule.ConcreteCreatorA();
-  let productA = creator1.factoryMethod();
+  let creator1: FactoryMethodModule.Creator = new FactoryMethodModule.ConcreteCreatorA();
+  let productA: FactoryMethodModule.Product = creator1.factoryMethod();
   console.log(productA.type);
 
-  let creator2 = new FactoryMethodModule.ConcreteCreatorB();
-  let productB = creator2.factoryMethod();
+  let creator2: FactoryMethodModule.Creator = new FactoryMethodModule.ConcreteCreatorB();
+  let productB: FactoryMethodModule.Product = creator2.factoryMethod();
   console.log(productB.type);
 }());

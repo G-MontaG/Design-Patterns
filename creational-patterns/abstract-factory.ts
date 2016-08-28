@@ -34,11 +34,11 @@ module AbstractFactoryModule {
 
 //*********************************************
 (function run() {
-  let factory1 = new AbstractFactoryModule.ConcreteFactory1();
-  let product1 = factory1.createProduct();
+  let factory1: AbstractFactoryModule.AbstractFactory = new AbstractFactoryModule.ConcreteFactory1();
+  let product1: AbstractFactoryModule.AbstractProduct = factory1.createProduct();
   product1.test();
 
-  let factory2= new AbstractFactoryModule.ConcreteFactory2();
-  let product2 = factory2.createProduct();
+  let factory2: AbstractFactoryModule.AbstractFactory = new AbstractFactoryModule.ConcreteFactory2();
+  let product2: AbstractFactoryModule.AbstractProduct = factory2.createProduct();
   product2.test();
 }());

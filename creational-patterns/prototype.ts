@@ -28,11 +28,11 @@ module PrototypeModule {
 
 //*********************************************
 (function run() {
-  let prototype1 = new PrototypeModule.ConcretePrototype1("ConcretePrototype1");
-  let newPrototype1 = Object.create(prototype1);
+  let prototype1: PrototypeModule.Prototype = new PrototypeModule.ConcretePrototype1("ConcretePrototype1");
+  let newPrototype1: PrototypeModule.Prototype = Object.create(prototype1);
   console.log(newPrototype1.type);
 
-  let prototype2 = new PrototypeModule.ConcretePrototype2("ConcretePrototype2");
-  let newPrototype2 = Object.create(prototype2);
+  let prototype2: PrototypeModule.Prototype = new PrototypeModule.ConcretePrototype2("ConcretePrototype2");
+  let newPrototype2: PrototypeModule.Prototype = Object.create(prototype2);
   console.log(newPrototype2.type);
 }());

@@ -63,16 +63,16 @@ module BuilderModule {
 
 //*********************************************
 (function run() {
-  let director = new BuilderModule.Director();
+  let director: BuilderModule.Director = new BuilderModule.Director();
 
-  let builder1 = new BuilderModule.ConcreteBuilder1();
-  let builder2 = new BuilderModule.ConcreteBuilder2();
+  let builder1: BuilderModule.Builder = new BuilderModule.ConcreteBuilder1();
+  let builder2: BuilderModule.Builder = new BuilderModule.ConcreteBuilder2();
 
   director.construct(builder1);
-  let product1 = builder1.getResult();
+  let product1: BuilderModule.Product = builder1.getResult();
   product1.show();
 
   director.construct(builder2);
-  let product2 = builder2.getResult();
+  let product2: BuilderModule.Product = builder2.getResult();
   product2.show();
 }());
