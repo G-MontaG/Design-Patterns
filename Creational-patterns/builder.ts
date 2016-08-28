@@ -1,68 +1,72 @@
-class Director {
-  public construct(builder: Builder) {
-    builder.buildPartA();
-    builder.buildPartB();
-  }
-}
-
-abstract class Builder {
-  public abstract buildPartA();
-  public abstract buildPartB();
-  public abstract getResult();
-}
-
-class ConcreteBuilder1 implements Builder {
-  private _product:Product = new Product();
-
-  public buildPartA() {
-    this._product.add("PartA");
+module BuilderModule {
+  export class Director {
+    public construct(builder: Builder) {
+      builder.buildPartA();
+      builder.buildPartB();
+    }
   }
 
-  public buildPartB() {
-    this._product.add("PartB");
+  export abstract class Builder {
+    public abstract buildPartA();
+
+    public abstract buildPartB();
+
+    public abstract getResult():Product;
   }
 
-  public getResult() {
-    return this._product;
-  }
-}
+  export class ConcreteBuilder1 extends Builder {
+    private _product: Product = new Product();
 
-class ConcreteBuilder2 implements Builder {
-  private _product:Product = new Product();
+    public buildPartA() {
+      this._product.add("PartA");
+    }
 
-  public buildPartA() {
-    this._product.add("PartY");
-  }
+    public buildPartB() {
+      this._product.add("PartB");
+    }
 
-  public buildPartB() {
-    this._product.add("PartX");
-  }
-
-  public getResult() {
-    return this._product;
-  }
-}
-
-class Product {
-  private _parts = [];
-
-  public add(part:string) {
-   this._parts.push(part);
+    public getResult():Product {
+      return this._product;
+    }
   }
 
-  public show() {
-    console.log("Product Parts -------");
-    for(let part of this._parts)
-    console.log(part);
+  export class ConcreteBuilder2 extends Builder {
+    private _product: Product = new Product();
+
+    public buildPartA() {
+      this._product.add("PartY");
+    }
+
+    public buildPartB() {
+      this._product.add("PartX");
+    }
+
+    public getResult():Product {
+      return this._product;
+    }
+  }
+
+  export class Product {
+    private _parts = [];
+
+    public add(part: string) {
+      this._parts.push(part);
+    }
+
+    public show() {
+      console.log("Product Parts -------");
+      for (let part of this._parts)
+        console.log(part);
+    }
   }
 }
 
 //*********************************************
 (function run() {
-  let director = new Director();
+  let director = new BuilderModule.Director();
 
-  let builder1 = new ConcreteBuilder1();
-  let builder2 = new ConcreteBuilder2();
+  let builder1 = new BuilderModule.ConcreteBuilder1();
+  let builder2 = new BuilderModule.ConcreteBuilder2();
 
   director.construct(builder1);
   let product1 = builder1.getResult();
