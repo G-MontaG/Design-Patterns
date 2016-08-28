@@ -9,18 +9,10 @@ module FactoryMethodModule {
 
   export class ConcreteProductA extends Product {
     protected _type = "ConcreteProductA";
-
-    get type(): string {
-      return this._type;
-    }
   }
 
   export class ConcreteProductB extends Product {
     protected _type = "ConcreteProductB";
-
-    get type(): string {
-      return this._type;
-    }
   }
 
   export abstract class Creator {
