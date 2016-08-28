@@ -30,7 +30,8 @@ class Product2 implements AbstractProduct {
   }
 }
 
-function run() {
+//*********************************************
+(function run() {
   let factory1 = new ConcreteFactory1();
   let product1 = factory1.createProduct();
   product1.test();
@@ -38,6 +39,4 @@ function run() {
   let factory2 = new ConcreteFactory2();
   let product2 = factory2.createProduct();
   product2.test();
-}
-
-run();
+}());

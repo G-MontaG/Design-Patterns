@@ -15,6 +15,6 @@
     "typings/main",
     "typings/main.d.ts"
   ],
-  "compileOnSave": false,
-  "buildOnSave": false
+  "compileOnSave": true,
+  "buildOnSave": true
 }
