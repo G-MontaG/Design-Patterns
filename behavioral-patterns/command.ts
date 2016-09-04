@@ -40,7 +40,6 @@ module CommandModule {
   let command: CommandModule.Command = new CommandModule.ConcreteCommand(receiver);
   let invoker: CommandModule.Invoker = new CommandModule.Invoker();
 
-  // Set and execute command
   invoker.setCommand(command);
   invoker.executeCommand();
 }());
