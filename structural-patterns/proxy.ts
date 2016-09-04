@@ -3,13 +3,13 @@ module ProxyModule {
     public abstract request();
   }
 
-  export class RealSubject implements Subject {
+  export class RealSubject extends Subject {
     public request() {
       console.log("Called RealSubject.Request()");
     }
   }
 
-  export class Proxy implements Subject {
+  export class Proxy extends Subject {
     private realSubject: RealSubject;
 
     public request() {

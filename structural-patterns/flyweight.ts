@@ -17,13 +17,13 @@ module FlyweightModule {
     public abstract operation(extrinsicstate: number);
   }
 
-  export class ConcreteFlyweight implements Flyweight {
+  export class ConcreteFlyweight extends Flyweight {
     public operation(extrinsicstate: number) {
       console.log("ConcreteFlyweight: " + extrinsicstate);
     }
   }
 
-  export class UnsharedConcreteFlyweight implements Flyweight {
+  export class UnsharedConcreteFlyweight extends Flyweight {
     public operation(extrinsicstate: number) {
       console.log("UnsharedConcreteFlyweight: " + extrinsicstate);
     }
