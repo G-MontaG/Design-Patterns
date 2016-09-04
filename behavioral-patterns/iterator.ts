@@ -6,15 +6,15 @@ module IteratorModule {
   export class ConcreteAggregate extends Aggregate {
     private items: Array<any> = [];
 
-    public createIterator() {
+    public createIterator(): Iterator {
       return new ConcreteIterator(this);
     }
 
-    public get count() {
+    public get count(): number {
       return this.items.length;
     }
 
-    public getItem(index: number) {
+    public getItem(index: number): any {
       return this.items[index];
     }
 
@@ -24,10 +24,10 @@ module IteratorModule {
   }
 
   export abstract class Iterator {
-    public abstract first();
-    public abstract next();
-    public abstract isDone();
-    public abstract currentItem();
+    public abstract first(): any;
+    public abstract next(): any;
+    public abstract isDone(): boolean;
+    public abstract currentItem(): any;
   }
 
   export class ConcreteIterator extends Iterator {
@@ -39,11 +39,11 @@ module IteratorModule {
       this.aggregate = aggregate;
     }
 
-    public first() {
+    public first(): any {
       return this.aggregate.getItem(1);
     }
 
-    public next() {
+    public next(): any {
       let ret = null;
       if (this.current < this.aggregate.count - 1) {
         ret = this.aggregate.getItem(++this.current);
@@ -51,11 +51,11 @@ module IteratorModule {
       return ret;
     }
 
-    public currentItem() {
+    public currentItem(): any {
       return this.aggregate.getItem(this.current);
     }
 
-    public isDone() {
+    public isDone(): boolean {
       return this.current >= this.aggregate.count;
     }
   }
